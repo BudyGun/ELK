@@ -49,7 +49,7 @@ apt update && apt install gnupg apt-transport-https
 Добавляю gpg-ключ:
 ```
 wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
----
+```
 Добавляю репозиторий в apt с яндекс зеркала:
 ```
 echo "deb [trusted=yes] https://mirror.yandex.ru/mirrors/elastic/7/ stable main" | sudo tee /etc/apt/sources.list.d/elastic-7.x.list
