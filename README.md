@@ -80,7 +80,7 @@ systemctl start elasticsearch.service
 ```
 sudo nano /etc/elasticsearch/elasticsearch.yml
 ```
-
+![1](https://github.com/BudyGun/ELK/blob/main/img/elk1.png)
 
 ### Задание 2. Kibana
 
