@@ -38,7 +38,49 @@
 
 *Приведите скриншот команды 'curl -X GET 'localhost:9200/_cluster/health?pretty', сделанной на сервере с установленным Elasticsearch. Где будет виден нестандартный cluster_name*.
 
+
+#### Решение  
+
+
+Устанавливаю зависимости:
+```
+apt update && apt install gnupg apt-transport-https
+```
+Добавляю gpg-ключ:
+```
+wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
 ---
+Добавляю репозиторий в apt с яндекс зеркала:
+```
+echo "deb [trusted=yes] https://mirror.yandex.ru/mirrors/elastic/7/ stable main" | sudo tee /etc/apt/sources.list.d/elastic-7.x.list
+```
+Обнавляю пакеты:
+```
+sudo apt update
+```
+Устанавливаем elastic:
+```
+sudo apt install elasticsearch
+```
+Обновляю конфиги systemd:
+```
+sudo systemctl daemon-reload
+```
+Включаем юнит в автозагрузку:
+```
+sudo systemctl enable elasticsearch.service
+```
+Запускаю сервис:
+```
+systemctl start elasticsearch.service
+```
+
+Далее меняю имя сервиса в файле elasticsearch.yml , раскомментирую строчку и меняю имя на своё - cluster.name: myhome-cluster
+
+```
+sudo nano /etc/elasticsearch/elasticsearch.yml
+```
+
 
 ### Задание 2. Kibana
 
