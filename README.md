@@ -92,6 +92,8 @@ curl 'localhost:9200/_cluster/health?pretty'
 Установите и запустите Kibana.
 
 *Приведите скриншот интерфейса Kibana на странице http://<ip вашего сервера>:5601/app/dev_tools#/console, где будет выполнен запрос GET /_cluster/health?pretty*.
+
+#### Решение  
 Установка кибаны:
 ```
 sudo apt install kibana
@@ -133,6 +135,8 @@ GET /_cluster/health?pretty
 Установите и запустите Logstash и Nginx. С помощью Logstash отправьте access-лог Nginx в Elasticsearch. 
 
 *Приведите скриншот интерфейса Kibana, на котором видны логи Nginx.*
+
+#### Решение  
 
 Настраиваю конфигурационный файл nginx.conf  
 Комментирую сущестующую строку #accesslog....
