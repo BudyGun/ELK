@@ -120,6 +120,7 @@ server.host: "0.0.0.0"
 ```
 sudo systemctl restart kibana
 ```
+На странице http://127.0.0.1:5601/app/dev_tools#/console, в консоли выполняю запрос GET /_cluster/health?pretty*.
 
 ![1](https://github.com/BudyGun/ELK/blob/main/img/elk2.png)
 ---
