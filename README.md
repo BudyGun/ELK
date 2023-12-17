@@ -134,6 +134,16 @@ GET /_cluster/health?pretty
 
 *Приведите скриншот интерфейса Kibana, на котором видны логи Nginx.*
 
+Настраиваю конфигурационный файл nginx.conf  
+Комментирую сущестующую строку #accesslog....
+Добавляю запись в конфигурационном файле:
+```
+access_log syslog:server=127.0.0.1:6000;
+```
+Тем самым настраиваю nginx на передачу access-логов в мой logstash сервер (127.0.0.1) по 6000-му порту.
+![1](https://github.com/BudyGun/ELK/blob/main/img/elk3.png)
+
+
 ---
 
 ### Задание 4. Filebeat. 
