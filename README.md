@@ -170,6 +170,21 @@ output {
 ```
 ![1](https://github.com/BudyGun/ELK/blob/main/img/elk4.png)
 
+Перезапускаю все сервисы - эластик, кибана, логстэш, нджинкс.  
+Захожу в кибану через вебинтерфейс. Раздел Stack Manadjment - Index Patternsю Вижу созданный индекс, добавляю его.  
+
+Делаю запись в accesslog сервера nginx - обращаюсь через curl  к nginx к существующей и несуществующей странице, чтобы остались логи:  
+```
+curl localhost/nginx
+```
+```
+curl localhost/nginx2
+```
+![1](https://github.com/BudyGun/ELK/blob/main/img/elk5.png)
+
+Звхожу вв кибану, вижу что логи появились:
+
+![1](https://github.com/BudyGun/ELK/blob/main/img/elk6.png)
 
 
 ---
