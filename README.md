@@ -147,6 +147,29 @@ access_log syslog:server=127.0.0.1:6000;
 Тем самым настраиваю nginx на передачу access-логов в мой logstash сервер (127.0.0.1) по 6000-му порту.
 ![1](https://github.com/BudyGun/ELK/blob/main/img/elk3.png)
 
+Создаю конфигурационный файл logstash.conf на сервере по пути:
+```
+/etc/logstash/conf.d/logstash.conf
+```
+с содержимым, указывая в input порт, который принимает от nginx логи, а в output сервер эластик и порт, на который отправляются логи с созданным индексом nginx-index:  
+```
+input {
+  syslog {
+    port => 6000
+    tags => "nginx"
+  }
+}
+
+output {
+  elasticsearch {
+    hosts => ["http://127.0.0.1:9200"]
+    index => "nginx-index"
+  }
+}
+```
+![1](https://github.com/BudyGun/ELK/blob/main/img/elk4.png)
+
+
 
 ---
 
