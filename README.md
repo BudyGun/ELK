@@ -193,7 +193,56 @@ curl localhost/nginx2
 
 Установите и запустите Filebeat. Переключите поставку логов Nginx с Logstash на Filebeat. 
 
-*Приведите скриншот интерфейса Kibana, на котором видны логи Nginx, которые были отправлены через Filebeat.*
+*Приведите скриншот интерфейса Kibana, на котором видны логи Nginx, которые были отправлены через Filebeat.*  
+
+Устанавливаю Filebeat стандартными командами из репозитория:  
+
+```
+sudo apt install filebeat
+```
+Обновляем конфиги systemd  
+```
+sudo systemctl daemon-reload
+```
+Включаю юнит в автозагрузку  
+```
+sudo systemctl enable filebeat.service
+```
+
+Меняю конфиг filebeat в файле 
+```
+/etc/filebeat/filebeat.yml
+```
+
+```
+filebeat.inputs:
+  - type: log
+    enabled: true
+    paths:
+      - /var/log/nginx/access.log
+.......
+output.logstash
+  hosts: ["127.0.0.1:5044"]
+```
+меняю конфиг логстэш:
+```
+input {
+  beats {
+    port => 5044
+  }
+}
+```
+
+Меняю конфиг nginx, закоментирую строку передачи лога в logstash и раскомментирую строку сбора логов  
+
+Захожу в кибану, добавляю индексы аналогично предыдущему заданию, только для filebeat.  
+
+
+
+
+
+sudo systemctl start filebeat.service <--запускаем сервис
+```
 
 
 ## Дополнительные задания (со звёздочкой*)
