@@ -235,7 +235,15 @@ input {
 
 Меняю конфиг nginx, закоментирую строку передачи лога в logstash и раскомментирую строку сбора логов  
 
+![1](https://github.com/BudyGun/ELK/blob/main/img/elk7.png)
+
+Перезапускаю все сервисы.  
 Захожу в кибану, добавляю индексы аналогично предыдущему заданию, только для filebeat.  
+Делаю запрос через curl к nginx.
+
+Вижу в дискавери логи.  
+![1](https://github.com/BudyGun/ELK/blob/main/img/elk8.png)
+
 
 
 
