@@ -182,7 +182,7 @@ curl localhost/nginx2
 ```
 ![1](https://github.com/BudyGun/ELK/blob/main/img/elk5.png)
 
-Звхожу в кибану, вижу что логи появились:
+Звхожу в кибану, открываю Discovery, вижу что логи появились:
 
 ![1](https://github.com/BudyGun/ELK/blob/main/img/elk6.png)
 
