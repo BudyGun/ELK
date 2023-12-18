@@ -195,6 +195,7 @@ curl localhost/nginx2
 
 *Приведите скриншот интерфейса Kibana, на котором видны логи Nginx, которые были отправлены через Filebeat.*  
 
+#### Решение  
 Устанавливаю Filebeat стандартными командами из репозитория:  
 
 ```
@@ -244,13 +245,6 @@ input {
 Вижу в дискавери логи.  
 ![1](https://github.com/BudyGun/ELK/blob/main/img/elk8.png)
 
-
-
-
-
-
-sudo systemctl start filebeat.service <--запускаем сервис
-```
 
 
 ## Дополнительные задания (со звёздочкой*)
